@@ -109,6 +109,8 @@ def forecast_accuracy_chart(sop: SOPCycleData) -> go.Figure:
 
     short_families = [f.split()[0] for f in families]
 
+
+    
     fig = go.Figure(go.Heatmap(
         z=z, x=periods, y=short_families,
         text=text, texttemplate="%{text}",
@@ -117,7 +119,7 @@ def forecast_accuracy_chart(sop: SOPCycleData) -> go.Figure:
         zmin=0, zmax=15,
         showscale=True,
         colorbar=dict(
-            title="MAPE %", titlefont=dict(color=SLATE_400, size=10),
+            title="MAPE %", title=dict(text='My title', font=dict(color=SLATE_400, size=10),
             tickfont=dict(color=SLATE_400, size=9),
             ticksuffix="%",
         ),
